@@ -18,11 +18,13 @@ public class User {
     private String id;
 
     private String name;
+    @Indexed(unique = true)
     private String rollNo;
     private String department;
     @Indexed(unique = true)
     private String email;
     private String loginIdentifier; // This is the field used for authentication
+    @Indexed(unique = true)
     private String hashedPassword;
     private String role; // "USER" or "ADMIN"
 
