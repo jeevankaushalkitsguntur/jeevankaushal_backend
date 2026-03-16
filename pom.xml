@@ -14,7 +14,7 @@
     <description>Backend for Jeevan Kaushal Club using Spring Boot and MongoDB</description>
 
     <properties>
-        <java.version>23</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -109,6 +109,7 @@
                     </excludes>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>
