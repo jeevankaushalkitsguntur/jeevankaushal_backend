@@ -1,4 +1,4 @@
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM maven:3.9.6-eclipse-temurin-23 AS build
 
 WORKDIR /app
 COPY . .
@@ -6,7 +6,7 @@ COPY . .
 RUN mvn clean package -DskipTests && \
     mv target/*.jar target/app.jar
 
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:23-jdk
 
 WORKDIR /app
 COPY --from=build /app/target/app.jar app.jar
