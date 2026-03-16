@@ -66,6 +66,9 @@ public class OtpController {
         String otp = String.valueOf(100000 + new Random().nextInt(900000));
 
 // Remove previous OTP if exists
+
+        otpTokenRepository.findByIdentifier(loginIdentifier)
+                .ifPresent(otpTokenRepository::delete);
         otpTokenRepository.findByIdentifier(loginIdentifier)
                 .ifPresent(existing -> otpTokenRepository.delete(existing));
 
