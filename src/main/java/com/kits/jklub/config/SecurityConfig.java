@@ -61,7 +61,11 @@ public class SecurityConfig {
                 "http://localhost:5500",
                 "http://127.0.0.1:5500",
                 "http://localhost:*",
-                "http://127.0.0.1:*"
+                "http://127.0.0.1:*",
+                "https://*.netlify.app",
+                "https://*.onrender.com",
+                "https://*.vercel.app",
+                "https://kitsgunturjeevankaushal.com"
         ));
 
         config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
