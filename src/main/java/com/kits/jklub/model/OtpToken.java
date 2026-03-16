@@ -29,7 +29,7 @@ public class OtpToken {
     private String otp;
 
     // Time after which the document is invalid (TTL Index automatically handles deletion)
-    @Indexed(expireAfterSeconds = 0)
+    @Indexed(expireAfterSeconds = 120)
     private LocalDateTime expiryDate;
 
 }

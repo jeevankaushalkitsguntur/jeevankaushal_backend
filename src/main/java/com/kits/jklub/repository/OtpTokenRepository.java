@@ -10,4 +10,5 @@ public interface OtpTokenRepository extends MongoRepository<OtpToken, String> {
      * Finds an OTP token by the user's unique identifier (email/phone number).
      */
     Optional<OtpToken> findByIdentifier(String identifier);
+
 }
