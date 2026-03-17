@@ -64,6 +64,23 @@ public class EmailService {
      * @param otp The 6-digit OTP string.
      */
     public void sendOtpEmail(String recipientEmail, String otp) {
+
+            System.out.println("🚀 EMAIL METHOD TRIGGERED");
+
+            try {
+                SimpleMailMessage message = new SimpleMailMessage();
+                message.setTo(recipientEmail);
+                message.setSubject("OTP TEST");
+                message.setText("Your OTP: " + otp);
+
+                mailSender.send(message);
+
+                System.out.println("✅ EMAIL SENT SUCCESSFULLY");
+            } catch (Exception e) {
+                System.out.println("❌ EMAIL FAILED");
+                e.printStackTrace();
+            }
+        
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(recipientEmail);
         message.setSubject("Jklub One-Time Password (OTP) for Verification");
