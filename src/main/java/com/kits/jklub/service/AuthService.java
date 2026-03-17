@@ -118,7 +118,7 @@ public class AuthService {
         token.setExpiryDate(LocalDateTime.now().plusMinutes(10)); // 10-minute validity
 
         otpTokenRepository.save(token);
-        emailService.sendSimpleMessage(email, subject, "Your verification code is: " + otp); //
+        emailService.sendOtpEmail(email, otp); //
     }
 
     private boolean validateOtp(String identifier, String otp) {
