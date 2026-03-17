@@ -1,5 +1,6 @@
 package com.kits.jklub.service;
 
+import com.kits.jklub.Util.OtpStore;
 import com.kits.jklub.model.OtpToken;
 import com.kits.jklub.model.User;
 import com.kits.jklub.repository.OtpTokenRepository;
@@ -117,7 +118,8 @@ public class AuthService {
         token.setOtp(otp);
         token.setExpiryDate(LocalDateTime.now().plusMinutes(10)); // 10-minute validity
 
-        otpTokenRepository.save(token);
+        OtpStore.saveOtp(identifier, otp);
+
         emailService.sendSimpleMessage(email, subject, "Your verification code is: " + otp); //
     }
 
