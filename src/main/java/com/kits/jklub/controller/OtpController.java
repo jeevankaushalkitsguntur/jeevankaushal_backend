@@ -69,8 +69,7 @@ public class OtpController {
 
         otpTokenRepository.findByIdentifier(loginIdentifier)
                 .ifPresent(otpTokenRepository::delete);
-        otpTokenRepository.findByIdentifier(loginIdentifier)
-                .ifPresent(existing -> otpTokenRepository.delete(existing));
+     
 
 // Create new OTP record
         OtpToken otpToken = new OtpToken();
