@@ -26,14 +26,14 @@ public class EmailService {
             Email from = new Email(FROM_EMAIL);
             Email to = new Email(recipientEmail);
 
-            String subject = "Jeevan Kaushal Club - OTP Verification";
+            String subject = "Jeevan Kaushal Club Verification Code";
 
-            String body = "Dear User,\n\n"
-                    + "Your One-Time Password (OTP) is: " + otp + "\n\n"
-                    + "This OTP is valid for 5 minutes.\n"
-                    + "Do not share it with anyone.\n\n"
+            String body = "Hello,\n\n"
+                    + "Your verification code is: " + otp + "\n\n"
+                    + "This code will expire in 20 minutes.\n"
+                    + "If you didn’t request this, please ignore this email.\n\n"
                     + "Regards,\n"
-                    + "Jeevan Kaushal Club";
+                    + "Jeevan Kaushal Club Team";
 
             Content content = new Content("text/plain", body);
 
